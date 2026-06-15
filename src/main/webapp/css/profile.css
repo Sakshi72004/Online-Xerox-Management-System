@@ -1,0 +1,157 @@
+@charset "UTF-8";
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f1f5f9;
+}
+
+/* Navbar */
+
+.navbar{
+    background:#0f172a;
+    padding:16px 0;
+}
+
+.navbar-brand{
+    color:white;
+    font-size:28px;
+    font-weight:700;
+}
+
+.navbar-brand span{
+    color:#3b82f6;
+}
+
+.nav-link{
+    color:#dbeafe !important;
+    margin-left:15px;
+}
+
+.active-link{
+    color:white !important;
+}
+
+.logout-btn{
+    background:#2563eb;
+    padding:10px 20px;
+    border-radius:10px;
+}
+
+/* Profile Section */
+
+.profile-section{
+    padding:50px 0;
+}
+
+.profile-card{
+    background:white;
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.profile-avatar{
+    width:100px;
+    height:100px;
+    background:#2563eb;
+    color:white;
+    border-radius:50%;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.profile-card h2{
+    font-weight:700;
+}
+
+.profile-card p{
+    color:#64748b;
+}
+
+.form-control{
+    border-radius:12px;
+    padding:12px;
+}
+
+textarea{
+    resize:none;
+}
+
+.save-btn{
+    background:#2563eb;
+    color:white;
+    padding:12px 25px;
+    border:none;
+    border-radius:12px;
+    font-weight:600;
+}
+
+.save-btn:hover{
+    background:#1d4ed8;
+    color:white;
+}
+
+
+/* Card Hover Effect */
+
+.profile-card:hover{
+    transform: translateY(-3px);
+    transition: 0.3s ease;
+}
+
+/* Input Focus Effect */
+
+.form-control:focus{
+    border-color: #2563eb;
+    box-shadow: 0 0 10px rgba(37,99,235,0.2);
+}
+
+/* Save Button Animation */
+
+.save-btn{
+    transition: all 0.3s ease;
+}
+
+.save-btn:hover{
+    background:#1d4ed8;
+    color:white;
+    transform: translateY(-2px);
+}
+
+/* Profile Avatar Hover */
+
+.profile-avatar{
+    transition: all 0.3s ease;
+}
+
+.profile-avatar:hover{
+    transform: scale(1.05);
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .profile-card{
+        padding:25px;
+    }
+
+    .profile-avatar{
+        width:80px;
+        height:80px;
+        font-size:35px;
+    }
+
+    .profile-card h2{
+        font-size:28px;
+    }
+}

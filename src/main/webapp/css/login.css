@@ -1,0 +1,153 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: linear-gradient(to right, #2563eb, #1e3a8a);
+    min-height: 100vh;
+}
+
+/* Navbar */
+
+.navbar{
+    padding: 18px 0;
+    background: transparent;
+}
+
+.navbar-brand{
+    color: white;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.navbar-brand span{
+    color: #93c5fd;
+}
+
+.nav-link{
+    color: #e0e7ff !important;
+    margin-left: 15px;
+    font-weight: 500;
+}
+
+.nav-link:hover{
+    color: white !important;
+}
+
+.active-link{
+    color: white !important;
+}
+
+.register-btn{
+    background: white;
+    color: #2563eb !important;
+    padding: 10px 22px;
+    border-radius: 10px;
+}
+
+/* Login Section */
+
+.login-section{
+    padding: 60px 0;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+}
+
+/* Login Card */
+
+.login-card{
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    padding: 45px;
+    color: white;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+
+.login-card h2{
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.login-card p{
+    color: #dbeafe;
+}
+
+/* Form */
+
+.form-label{
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.input-group{
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.input-group-text{
+    background: white;
+    border: none;
+    color: #2563eb;
+}
+
+.form-control{
+    border: none;
+    padding: 14px;
+}
+
+.form-control:focus{
+    box-shadow: none;
+}
+
+/* Login Button */
+
+.login-btn{
+    background: white;
+    color: #2563eb;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: 0.3s;
+    border: none;
+}
+
+.login-btn:hover{
+    background: #dbeafe;
+}
+
+/* Links */
+
+.forgot-link{
+    color: #dbeafe;
+    text-decoration: none;
+}
+
+.forgot-link:hover{
+    color: white;
+}
+
+.register-link{
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.register-link:hover{
+    text-decoration: underline;
+}
+
+/* Responsive */
+
+@media(max-width: 768px){
+
+    .login-card{
+        padding: 35px 25px;
+    }
+
+}

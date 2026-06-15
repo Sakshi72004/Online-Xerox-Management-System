@@ -1,0 +1,78 @@
+@charset "UTF-8";
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#f1f5f9;
+}
+
+/* Navbar */
+
+.navbar{
+background:#0f172a;
+padding:15px 0;
+}
+
+.navbar-brand{
+color:white;
+font-size:28px;
+font-weight:700;
+}
+
+.navbar-brand span{
+color:#3b82f6;
+}
+
+/* Dashboard */
+
+.dashboard-section{
+padding:50px 0;
+}
+
+.stats-card{
+background:white;
+padding:25px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.stats-card h3{
+color:#2563eb;
+font-weight:700;
+}
+
+.card-box{
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.card-box h4{
+margin-bottom:20px;
+font-weight:600;
+}
+
+.table{
+margin-bottom:0;
+}
+
+.form-control,
+.form-select{
+border-radius:10px;
+padding:10px;
+}
+
+.btn-primary{
+background:#2563eb;
+border:none;
+}
+
+.btn-primary:hover{
+background:#1d4ed8;
+}

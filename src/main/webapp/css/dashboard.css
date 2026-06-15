@@ -1,0 +1,108 @@
+@charset "UTF-8";
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f1f5f9;
+}
+
+/* Navbar */
+
+.navbar{
+    background:#0f172a;
+    padding:16px 0;
+}
+
+.navbar-brand{
+    color:white;
+    font-size:28px;
+    font-weight:700;
+}
+
+.navbar-brand span{
+    color:#3b82f6;
+}
+
+.nav-link{
+    color:#dbeafe !important;
+    margin-left:15px;
+}
+
+.active-link{
+    color:white !important;
+}
+
+.logout-btn{
+    background:#2563eb;
+    border-radius:10px;
+    padding:10px 20px;
+}
+
+/* Dashboard */
+
+.dashboard-section{
+    padding:50px 0;
+}
+
+.welcome-card{
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    margin-bottom:30px;
+}
+
+.welcome-card h2{
+    font-weight:700;
+}
+
+/* Action Cards */
+
+.action-card{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    color:#0f172a;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.action-card:hover{
+    transform:translateY(-5px);
+}
+
+.action-card i{
+    font-size:40px;
+    color:#2563eb;
+}
+
+/* Stats */
+
+.stats-card{
+    background:white;
+    padding:25px;
+    text-align:center;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.stats-card h3{
+    color:#2563eb;
+    font-weight:700;
+}
+
+/* Table */
+
+.table-card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}

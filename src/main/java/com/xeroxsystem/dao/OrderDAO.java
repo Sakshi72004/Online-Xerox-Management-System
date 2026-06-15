@@ -1,0 +1,292 @@
+package com.xeroxsystem.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.xeroxsystem.model.Order;
+import com.xeroxsystem.util.DBConnection;
+
+public class OrderDAO {
+
+    // SAVE ORDER
+
+    public boolean saveOrder(Order order) {
+
+        boolean status = false;
+
+        try {
+
+            Connection con =
+                    DBConnection.getConnection();
+
+            String sql =
+            "INSERT INTO orders(user_id,file_name,copies,print_type,print_side,delivery_type,delivery_address,notes,total_amount,status) VALUES(?,?,?,?,?,?,?,?,?,?)";
+
+            PreparedStatement ps =
+                    con.prepareStatement(sql);
+
+            ps.setInt(1, order.getUserId());
+            ps.setString(2, order.getFileName());
+            ps.setInt(3, order.getCopies());
+            ps.setString(4, order.getPrintType());
+            ps.setString(5, order.getPrintSide());
+            ps.setString(6, order.getDeliveryType());
+            ps.setString(7, order.getDeliveryAddress());
+            ps.setString(8, order.getNotes());
+            ps.setDouble(9, order.getTotalAmount());
+            ps.setString(10, "Pending");
+
+            int row = ps.executeUpdate();
+
+            if (row > 0) {
+
+                status = true;
+
+            }
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+
+        }
+
+        return status;
+    }
+
+    // GET ALL ORDERS
+
+    public List<Order> getAllOrders() {
+
+        List<Order> list = new ArrayList<>();
+
+        try {
+
+            Connection con =
+                    DBConnection.getConnection();
+
+            String sql =
+                    "SELECT * FROM orders ORDER BY id DESC";
+
+            PreparedStatement ps =
+                    con.prepareStatement(sql);
+
+            ResultSet rs =
+                    ps.executeQuery();
+
+            while (rs.next()) {
+
+                Order order = new Order();
+
+                order.setId(
+                        rs.getInt("id"));
+
+                order.setUserId(
+                        rs.getInt("user_id"));
+
+                order.setFileName(
+                        rs.getString("file_name"));
+
+                order.setCopies(
+                        rs.getInt("copies"));
+
+                order.setPrintType(
+                        rs.getString("print_type"));
+
+                order.setPrintSide(
+                        rs.getString("print_side"));
+
+                order.setDeliveryType(
+                        rs.getString("delivery_type"));
+
+                order.setDeliveryAddress(
+                        rs.getString("delivery_address"));
+
+                order.setNotes(
+                        rs.getString("notes"));
+
+                order.setTotalAmount(
+                        rs.getDouble("total_amount"));
+
+                order.setStatus(
+                        rs.getString("status"));
+
+                list.add(order);
+
+            }
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+
+        }
+
+        return list;
+    }
+    
+    public Order getOrderById(int id) {
+
+        Order order = null;
+
+        try {
+
+            Connection con =
+                    DBConnection.getConnection();
+
+            String sql =
+                    "SELECT * FROM orders WHERE id=?";
+
+            PreparedStatement ps =
+                    con.prepareStatement(sql);
+
+            ps.setInt(1, id);
+
+            ResultSet rs =
+                    ps.executeQuery();
+
+            if(rs.next()) {
+
+                order = new Order();
+
+                order.setId(
+                        rs.getInt("id"));
+
+                order.setUserId(
+                        rs.getInt("user_id"));
+
+                order.setFileName(
+                        rs.getString("file_name"));
+
+                order.setCopies(
+                        rs.getInt("copies"));
+
+                order.setPrintType(
+                        rs.getString("print_type"));
+
+                order.setPrintSide(
+                        rs.getString("print_side"));
+
+                order.setDeliveryType(
+                        rs.getString("delivery_type"));
+
+                order.setDeliveryAddress(
+                        rs.getString("delivery_address"));
+
+                order.setNotes(
+                        rs.getString("notes"));
+
+                order.setTotalAmount(
+                        rs.getDouble("total_amount"));
+
+                order.setStatus(
+                        rs.getString("status"));
+
+            }
+
+        } catch(Exception e) {
+
+            e.printStackTrace();
+
+        }
+
+        return order;
+    }
+    
+    public boolean cancelOrder(int id) {
+
+        boolean status = false;
+
+        try {
+
+            Connection con =
+                    DBConnection.getConnection();
+
+            String sql =
+                    "UPDATE orders SET status=? WHERE id=?";
+
+            PreparedStatement ps =
+                    con.prepareStatement(sql);
+
+            ps.setString(1, "Cancelled");
+            ps.setInt(2, id);
+
+            int row = ps.executeUpdate();
+
+            if(row > 0) {
+
+                status = true;
+
+            }
+
+        } catch(Exception e) {
+
+            e.printStackTrace();
+
+        }
+
+        return status;
+    }
+    
+    public boolean updateOrderStatus(int id, String status) {
+
+        boolean result = false;
+
+        try {
+
+            Connection con =
+                    DBConnection.getConnection();
+
+            String sql =
+                    "UPDATE orders SET status=? WHERE id=?";
+
+            PreparedStatement ps =
+                    con.prepareStatement(sql);
+
+            ps.setString(1, status);
+            ps.setInt(2, id);
+
+            int row = ps.executeUpdate();
+
+            if(row > 0) {
+                result = true;
+            }
+
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+
+        return result;
+    }
+    
+    public boolean deleteOrder(int id) {
+
+        boolean status = false;
+
+        try {
+
+            Connection con =
+                    DBConnection.getConnection();
+
+            String sql =
+                    "DELETE FROM orders WHERE id=?";
+
+            PreparedStatement ps =
+                    con.prepareStatement(sql);
+
+            ps.setInt(1, id);
+
+            status =
+                    ps.executeUpdate() > 0;
+
+        } catch(Exception e) {
+
+            e.printStackTrace();
+
+        }
+
+        return status;
+    }
+}

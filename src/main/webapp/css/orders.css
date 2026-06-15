@@ -1,0 +1,98 @@
+@charset "UTF-8";
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f1f5f9;
+}
+
+/* Navbar */
+
+.navbar{
+    background:#0f172a;
+    padding:16px 0;
+}
+
+.navbar-brand{
+    color:white;
+    font-size:28px;
+    font-weight:700;
+}
+
+.navbar-brand span{
+    color:#3b82f6;
+}
+
+.nav-link{
+    color:#dbeafe !important;
+    margin-left:15px;
+}
+
+.active-link{
+    color:white !important;
+}
+
+.logout-btn{
+    background:#2563eb;
+    padding:10px 20px;
+    border-radius:10px;
+}
+
+/* Section */
+
+.orders-section{
+    padding:50px 0;
+}
+
+.page-header{
+    margin-bottom:30px;
+}
+
+.page-header h2{
+    font-weight:700;
+}
+
+.page-header p{
+    color:#64748b;
+}
+
+/* Search */
+
+.search-card{
+    background:white;
+    padding:20px;
+    border-radius:20px;
+    margin-bottom:25px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+/* Table */
+
+.table-card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.table th{
+    color:#0f172a;
+    font-weight:600;
+}
+
+.table td{
+    vertical-align:middle;
+}
+
+.btn-primary{
+    background:#2563eb;
+    border:none;
+}
+
+.btn-primary:hover{
+    background:#1d4ed8;
+}

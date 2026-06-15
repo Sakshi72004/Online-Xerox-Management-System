@@ -1,0 +1,137 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: #f1f5f9;
+}
+
+/* Navbar */
+
+.navbar{
+    background: #0f172a;
+    padding: 16px 0;
+}
+
+.navbar-brand{
+    color: white;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.navbar-brand span{
+    color: #3b82f6;
+}
+
+.nav-link{
+    color: #dbeafe !important;
+    margin-left: 15px;
+    font-weight: 500;
+}
+
+.nav-link:hover{
+    color: white !important;
+}
+
+.active-link{
+    color: white !important;
+}
+
+.logout-btn{
+    background: #3b82f6;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+/* Upload Section */
+
+.upload-section{
+    padding: 60px 0;
+}
+
+/* Cards */
+
+.upload-card,
+.summary-card{
+    background: white;
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.upload-card h2,
+.summary-card h3{
+    font-weight: 700;
+    color: #0f172a;
+}
+
+/* Form */
+
+.form-label{
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.form-control,
+.form-select{
+    padding: 14px;
+    border-radius: 12px;
+}
+
+textarea{
+    resize: none;
+}
+
+/* Delivery Fields */
+
+#deliveryFields{
+    display: none;
+}
+
+/* Order Button */
+
+.order-btn{
+    background: #2563eb;
+    color: white;
+    padding: 14px 30px;
+    border-radius: 12px;
+    border: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.order-btn:hover{
+    background: #1e40af;
+}
+
+/* Summary */
+
+.summary-item{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 18px;
+    color: #475569;
+}
+
+.summary-total{
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+/* Responsive */
+
+@media(max-width: 768px){
+
+    .upload-card,
+    .summary-card{
+        padding: 25px;
+    }
+
+}
