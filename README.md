@@ -92,11 +92,26 @@ http://localhost:8080/OnlineXeroxSystem
 
 
 ### User Dashboard
-- Upload Files
-- Place Orders
-- Track Orders
+
+<img width="1875" height="912" alt="upload" src="https://github.com/user-attachments/assets/a0422a73-2a2c-41d9-8f76-b9f928621099" />
+
+### Upload Files
+
+<img width="1853" height="896" alt="orders" src="https://github.com/user-attachments/assets/3f00cff2-7ec5-4b69-b37c-b010df67f04e" />
+
+### Place Orders
+
+<img width="1887" height="912" alt="track orders" src="https://github.com/user-attachments/assets/4a2147bc-bfb1-495d-b16c-2977082efd99" />
+
+### Track Orders
 
 ### Admin Dashboard
+
+<img width="1847" height="887" alt="admin dashboard" src="https://github.com/user-attachments/assets/738fa1e4-b0d6-4645-951f-579fb76905d0" />
+
+
+<img width="1877" height="911" alt="admin orders" src="https://github.com/user-attachments/assets/ba73cc91-42ca-4a13-97a2-3383dac68c0a" />
+
 - Manage Orders
 - Manage Users
 - View Documents
