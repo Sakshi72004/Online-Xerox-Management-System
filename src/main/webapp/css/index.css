@@ -243,3 +243,30 @@ footer p{
     }
 
 }
+
+.footer-link{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.footer-link:hover{
+    color:#0d6efd;
+}
+.nav-link.active{
+    color:#0d6efd !important;
+    font-weight:600;
+}
+.hero-btn{
+    text-decoration: none !important;
+}
+
+.hero-btn:hover{
+    text-decoration: none !important;
+}
+.hero-btn,
+.hero-btn:hover,
+.hero-btn:focus,
+.hero-btn:active{
+    text-decoration: none !important;
+}

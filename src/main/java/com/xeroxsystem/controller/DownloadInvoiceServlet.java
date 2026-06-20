@@ -31,11 +31,28 @@ public class DownloadInvoiceServlet extends HttpServlet {
 
         try {
 
+            HttpSession session =
+                    request.getSession(false);
+
+            User loggedUser =
+                    session == null ? null :
+                    (User) session.getAttribute("loggedUser");
+
+            if(loggedUser == null) {
+                response.sendRedirect("login.jsp");
+                return;
+            }
+
             int id = Integer.parseInt(
                     request.getParameter("id"));
 
             OrderDAO orderDao = new OrderDAO();
             Order order = orderDao.getOrderById(id);
+
+            if(order == null || order.getUserId() != loggedUser.getId()) {
+                response.sendRedirect("orders.jsp");
+                return;
+            }
 
             UserDAO userDao = new UserDAO();
             User user = userDao.getUserById(
@@ -75,6 +92,10 @@ public class DownloadInvoiceServlet extends HttpServlet {
                     "Order Status : "
                     + order.getStatus()));
 
+            document.add(new Paragraph(
+                    "Payment Status : "
+                    + order.getPaymentStatus()));
+
             document.add(new Paragraph(" "));
 
             document.add(new Paragraph(
@@ -112,8 +133,13 @@ public class DownloadInvoiceServlet extends HttpServlet {
                     + order.getCopies()));
 
             document.add(new Paragraph(
+                    "Pages : "
+                    + order.getPages()));
+
+            document.add(new Paragraph(
                     "Print Type : "
-                    + order.getPrintType()));
+                    + ("5".equals(order.getPrintType())
+                    ? "Color Print" : "Black & White")));
 
             document.add(new Paragraph(
                     "Print Side : "
@@ -126,6 +152,21 @@ public class DownloadInvoiceServlet extends HttpServlet {
             document.add(new Paragraph(
                     "Delivery Address : "
                     + order.getDeliveryAddress()));
+
+            document.add(new Paragraph(
+                    "Payment Method : "
+                    + order.getPaymentMethod()));
+
+            String transactionText =
+                    "COD".equalsIgnoreCase(order.getPaymentStatus())
+                    ? "Payment on delivery"
+                    : ("Pay at Shop".equalsIgnoreCase(order.getPaymentStatus())
+                    ? "Payment at shop"
+                    : order.getTransactionId());
+
+            document.add(new Paragraph(
+                    "Transaction : "
+                    + transactionText));
 
             document.add(new Paragraph(
                     "Notes : "

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -89,14 +89,23 @@
 
                         <div class="text-center mb-4">
 
-                            <h2>Welcome Back 👋</h2>
+                            <h2>Welcome Back</h2>
 
                             <p>
                                 Login to continue your printing services
                             </p>
 
+                        </div>                        <% if(request.getAttribute("error") != null) { %>
+                        <div class="alert alert-danger">
+                            <%= request.getAttribute("error") %>
                         </div>
+                        <% } %>
 
+                        <% if(request.getAttribute("success") != null) { %>
+                        <div class="alert alert-success">
+                            <%= request.getAttribute("success") %>
+                        </div>
+                        <% } %>
                         <!-- Login Form -->
 
                         <form action="login" method="post">
@@ -163,7 +172,7 @@
 
                                 </div>
 
-                                <a href="#" class="forgot-link">
+                                <a href="forgot-password.jsp" class="forgot-link">
                                     Forgot Password?
                                 </a>
 

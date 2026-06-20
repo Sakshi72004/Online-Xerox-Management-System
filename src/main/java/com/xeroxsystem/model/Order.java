@@ -14,6 +14,12 @@ public class Order {
     private double totalAmount;
     private String status;
     private String userName;
+    private String paymentMethod;
+    private String paymentStatus;
+    private String transactionId;
+    private String orderDate;
+    private String expectedDelivery;
+    private int pages;
 
     public Order() {}
 
@@ -111,5 +117,52 @@ public class Order {
     
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public String getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+
+    public String getPaymentStatus() {
+        return paymentStatus;
+    }
+
+    public void setPaymentStatus(String paymentStatus) {
+        this.paymentStatus = paymentStatus;
+    }
+
+    public String getTransactionId() {
+        return transactionId;
+    }
+
+    public void setTransactionId(String transactionId) {
+        this.transactionId = transactionId;
+    }
+
+    public String getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(String orderDate) {
+        this.orderDate = orderDate;
+    }
+
+    public String getExpectedDelivery() {
+        return expectedDelivery;
+    }
+
+    public void setExpectedDelivery(String expectedDelivery) {
+        this.expectedDelivery = expectedDelivery;
+    }
+    public int getPages() {
+        return pages;
+    }
+
+    public void setPages(int pages) {
+        this.pages = pages;
     }
 }

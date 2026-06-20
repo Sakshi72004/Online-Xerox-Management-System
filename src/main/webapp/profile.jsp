@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="com.xeroxsystem.model.User" %>
 
@@ -99,7 +99,7 @@ if(user == null){
 
                     <li class="nav-item">
                         <a class="nav-link logout-btn"
-                            href="index.jsp">
+                            href="logout">
                             Logout
                         </a>
                     </li>

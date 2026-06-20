@@ -307,6 +307,12 @@ public class AdminDAO {
                 o.setStatus(
                         rs.getString("status"));
                 o.setUserName(rs.getString("full_name"));
+                o.setPaymentMethod(rs.getString("payment_method"));
+                o.setPaymentStatus(rs.getString("payment_status"));
+                o.setTransactionId(rs.getString("transaction_id"));
+                o.setOrderDate(rs.getString("order_date"));
+                o.setExpectedDelivery(rs.getString("expected_delivery"));
+                o.setPages(rs.getInt("pages"));
 
                 list.add(o);
             }
@@ -343,6 +349,51 @@ public class AdminDAO {
             }
 
         } catch(Exception e) {
+            e.printStackTrace();
+        }
+
+        return result;
+    }
+
+    public boolean updatePrintSettings(double bwPrice, double colorPrice,
+            double deliveryCharge) {
+
+        boolean result = false;
+
+        try {
+
+            Connection con =
+                    DBConnection.getConnection();
+
+            String sql =
+                    "UPDATE print_settings SET bw_price=?, color_price=?, delivery_charge=? WHERE id=1";
+
+            PreparedStatement ps =
+                    con.prepareStatement(sql);
+
+            ps.setDouble(1, bwPrice);
+            ps.setDouble(2, colorPrice);
+            ps.setDouble(3, deliveryCharge);
+
+            result = ps.executeUpdate() > 0;
+
+            if(!result) {
+
+                String insertSql =
+                        "INSERT INTO print_settings(id,bw_price,color_price,delivery_charge) VALUES(1,?,?,?)";
+
+                PreparedStatement insertPs =
+                        con.prepareStatement(insertSql);
+
+                insertPs.setDouble(1, bwPrice);
+                insertPs.setDouble(2, colorPrice);
+                insertPs.setDouble(3, deliveryCharge);
+
+                result = insertPs.executeUpdate() > 0;
+            }
+
+        } catch(Exception e) {
+
             e.printStackTrace();
         }
 

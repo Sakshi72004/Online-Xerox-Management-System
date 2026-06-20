@@ -57,7 +57,7 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="Working-Flow">
+        <a class="nav-link" href="#Working-Flow">
             Working Flow
         </a>
     </li>
@@ -99,13 +99,17 @@
                         delivery tracking, invoice generation and instant print services.
                     </p>
 
-                    <button class="hero-btn btn-primary-custom">
-                        Upload Now
-                    </button>
+                    <a href="login.jsp"
+   class="hero-btn btn-primary-custom">
+   <i class="bi bi-cloud-upload"></i>
+   Upload Now
+</a>
 
-                    <button class="hero-btn btn-outline-custom">
-                        Track Order
-                    </button>
+<a href="login.jsp"
+   class="hero-btn btn-outline-custom">
+   <i class="bi bi-truck"></i>
+   Track Order
+</a>
 
                 </div>
 
@@ -221,7 +225,7 @@
     <!-- How It Works -->
 
     <section class="how-section" id="Working-Flow">
-    >
+    
 
         <div class="container">
 
@@ -322,10 +326,29 @@
 
                     <h5>Quick Links</h5>
 
-                    <p>Home</p>
-                    <p>Services</p>
-                    <p>Track Order</p>
-                    <p>Contact</p>
+                    <p>
+    <a href="#home" class="footer-link">
+        Home
+    </a>
+</p>
+
+<p>
+    <a href="#services" class="footer-link">
+        Services
+    </a>
+</p>
+
+<p>
+    <a href="#Working-Flow" class="footer-link">
+        Working Flow
+    </a>
+</p>
+
+<p>
+    <a href="#contact" class="footer-link">
+        Contact
+    </a>
+</p>
 
                 </div>
 
@@ -356,6 +379,51 @@
     <!-- Bootstrap JS -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+
+const sections =
+document.querySelectorAll("section");
+
+const navLinks =
+document.querySelectorAll(".nav-link");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+
+        const sectionTop =
+        section.offsetTop - 100;
+
+        const sectionHeight =
+        section.clientHeight;
+
+        if(pageYOffset >= sectionTop){
+
+            current =
+            section.getAttribute("id");
+
+        }
+
+    });
+
+    navLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        if(link.getAttribute("href")
+           === "#" + current){
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+});
+
+</script>
 	
 </body>
 </html>
