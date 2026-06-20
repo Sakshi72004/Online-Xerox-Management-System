@@ -88,6 +88,8 @@ http://localhost:8080/OnlineXeroxSystem
 ---
 
 ## 📸 Screenshots
+<img width="1878" height="912" alt="image" src="https://github.com/user-attachments/assets/6fa5b308-1d97-4e11-85bd-7dd399423b1a" />
+
 
 ### User Dashboard
 - Upload Files
